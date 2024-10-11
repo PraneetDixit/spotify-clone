@@ -1,0 +1,33 @@
+#container{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+#body{
+    flex-grow: 1;
+    padding: 10px;
+    padding-top: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+#playerWrapper{
+    height: 85px;
+}
+
+#routeWrapper{
+    background-color: #121212;
+    border-radius: 10px;
+    flex-grow: 1;
+    margin-left: 8px;
+    max-width: calc(100% - 358px);
+    overflow-y: scroll;
+}
+
+#libraryWrapper{
+    min-width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+}

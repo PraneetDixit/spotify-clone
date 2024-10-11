@@ -1,13 +1,13 @@
-* {
+#signupWrapper {
     background-color: rgb(20, 20, 20);
     box-sizing: border-box;
 }
 
-a {
+#signupWrapper a {
     color: white;
 }
 
-span {
+#signupWrapper span {
     color: rgb(119, 116, 116);
 }
 
@@ -26,7 +26,7 @@ span {
     justify-content: center;
     color: white;
 }
-label{
+#signupWrapper label{
     font-weight: bold;
     color: white;
     margin: 4px;
@@ -39,7 +39,7 @@ label{
     color: white;
 }
 
-input {
+#signupWrapper input {
     margin: 5px;
     width: 90%;
     font-size: medium;
@@ -63,7 +63,7 @@ input {
     display: flex;
     justify-content: center;
 }
-button {
+#signupWrapper button {
     background-color: #1ED760;
     color: black;
     font-size: large;
@@ -73,13 +73,13 @@ button {
     border-radius: 30px;
     cursor: pointer;
 }
-p{
+#signupWrapper p{
     text-align: center;
 }
-button:hover{
+#signupWrapper button:hover{
     background-color: #6cdb93;
     transition: ease-in-out;
 }
-input:hover{
+#signupWrapper input:hover{
     border: 2px solid white;
 }

@@ -1,0 +1,148 @@
+nav {
+  display: flex;
+  padding: 8px 25px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > a {
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  padding: 5px;
+}
+
+.midBar {
+  display: flex;
+  align-items: center;
+}
+
+.midBar > a {
+  font-size: 22px;
+  padding: 13px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  display: flex;
+  aspect-ratio: 1;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.midBar > a:hover {
+  transform: scale(1.04);
+}
+
+.midBar > a:focus {
+  opacity: 0.8;
+}
+
+.auth button {
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  padding: 15px 28px;
+  margin-left: 10px;
+  font-weight: bold;
+  transition: transform 0.1s;
+}
+
+.auth button:active {
+  opacity: 0.9;
+}
+
+.auth button:hover {
+  transform: scale(1.04);
+}
+
+.signUp {
+  background-color: transparent;
+  color: #b3b3b3;
+}
+
+.signUp:hover {
+  color: white;
+}
+
+.signIn {
+  background-color: white;
+  color: black;
+}
+
+.signIn:hover {
+  opacity: 0.95;
+}
+
+.searchBox {
+  margin-left: 10px;
+  width: 450px;
+  position: relative;
+  display: flex;
+}
+
+#searchTerm {
+  width: 100%;
+  border: 2px solid #1f1f1f;
+  display: block;
+  background-color: #1f1f1f;
+  padding: 15px 50px;
+  border-radius: 26px;
+  font-size: 16px;
+  color: white;
+  caret-color: white;
+  outline: none;
+  transition: border-color 0.1s, background-color 0.2s;
+  cursor: pointer;
+}
+
+#searchTerm:hover, #searchTerm:focus{
+    background-color: #2a2a2a;
+}
+
+#searchTerm:focus{
+    cursor: text    ;
+}
+
+#searchTerm::placeholder {
+  color: #b3b3b3;
+}
+
+#searchTerm:focus {
+  border: 2px solid white;
+}
+
+#search{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    vertical-align:middle;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: #b3b3b3;
+    transition: color 0.1s;
+}
+
+.searchBox:hover #search, #searchTerm:focus + button{
+    color: white;
+}
+
+#clear{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    vertical-align:middle;
+    padding-right: 10px;
+    color: #b3b3b3;
+    transition: color 0.1s;
+}
+
+#clear:hover{
+    color: white;
+}

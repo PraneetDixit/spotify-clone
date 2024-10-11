@@ -4,6 +4,7 @@ import './Signup.css';
 export default function Signup() {
   return (
     <>
+    <div id="signupWrapper">
       <div class='logo'>
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg' height={40} width={40}></img>
       </div>,
@@ -24,7 +25,7 @@ export default function Signup() {
       </div>,
       <div class='button'><button>Sign Up</button></div>,
       <p><span>Already have an account?<a href='http://localhost:3000/signin'> Log in here</a></span></p>
-      
+     </div> 
     </>
   )
 }

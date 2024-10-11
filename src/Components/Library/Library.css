@@ -1,0 +1,18 @@
+#libraryInnerWrapper{
+    background-color: #121212;
+    height: 100%;
+    padding: 20px 25px;
+}
+
+#libTitle{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+#libTitle div{
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: #b3b3b3;
+}

@@ -1,0 +1,47 @@
+#homeInnerWrapper {
+  padding: 20px 25px;
+}
+
+.card {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.1s;
+  height: 100%;
+}
+
+.card:hover {
+  background-color: #1f1f1f;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1;
+}
+
+.artist img {
+  border-radius: 50%;
+}
+
+h2 {
+  color: white;
+  font-weight: 700;
+  margin: 10px 0;
+  font-size: 22px;
+}
+
+.card p {
+  color: white;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .sub {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin: 0;
+}
