@@ -14,7 +14,7 @@
 }
 
 #playerWrapper{
-    height: 120px;
+    min-height: 80px;
 }
 
 #routeWrapper{

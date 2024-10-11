@@ -1,42 +1,42 @@
-#head{
+#artist #head{
     background: linear-gradient(rgb(192, 173, 173), rgb(110, 99, 99));
     display: flex;
     padding: 30px 20px;
     backdrop-filter: blur(10px);
 }
 
-#head img{
+#artist #head img{
     width: 180px;
     border-radius: 50%;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
     margin-right: 30px;
 }
 
-#head h1{
+#artist #head h1{
     color: white;
     font-weight: 800;
     font-size: 90px;
     text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
 }
 
-#head p{
+#artist #head p{
     text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
     color: white;
     font-size: 16px;
 }
 
-#tracks{
+#artist #tracks{
     padding: 20px;
 }
 
-.track{
+#artist .track{
     display: flex;
     padding: 10px 20px;
     align-items: center;
     border-radius: 5px;
 }
 
-.track:hover{
+#artist .track:hover{
     background-color: #5c5c5c;
 }
 
@@ -44,19 +44,19 @@
     border-radius: 5px;
 }
 
-.trackName{
+#artist .trackName{
     color: white;
     font-size: 14px;
     font-weight: 500;
     flex-grow: 1;
 }
 
-.trackName a:hover{
+#artist .trackName a:hover{
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 }
 
-.plays, .duration, .serial{
+#artist .plays, .duration, .serial{
     color: #b3b3b3;
     font-size: 14px;
 }
@@ -65,14 +65,14 @@
     width: 25px;
 }
 
-.trackName{
+#artist .trackName{
     margin-left: 15px;
 }
 
-.plays, .duration{
+#artist .plays, .duration{
     text-align: right;
 }
 
-.duration{
+#artist .duration{
     min-width: 350px;
 }
