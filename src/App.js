@@ -14,6 +14,7 @@ import {
 import Home from "./Components/Home/Home";
 import Artist from "./Components/Artist/Artist";
 import Album from "./Components/Album/Album"
+import Track from "./Components/Track/Track";
 
 library.add(fab, faHouse, faMagnifyingGlass, faXmark, faBook);
 
@@ -34,6 +35,9 @@ function App() {
         {
           path: "album/:id",
           element: <Album />,
+        },{
+          path: "track/:id",
+          element: <Track />
         }
       ],
     },

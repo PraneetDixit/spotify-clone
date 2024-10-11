@@ -18,7 +18,7 @@ export default function () {
     //   method: "GET",
     //   url: "https://spotify-scraper.p.rapidapi.com/v1/home",
     //   headers: {
-    //     "x-rapidapi-key": "cf54695df8msh16dd2dfff300ecap1d167bjsn819bec01c74c",
+    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
     //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
     //   },
     // })
