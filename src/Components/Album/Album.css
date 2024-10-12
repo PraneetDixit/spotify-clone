@@ -36,6 +36,7 @@
 
 #album #head p.artistCrumb{
     display: flex;
+    align-items: center;
 }
 
 #album #head p.artistCrumb img{
