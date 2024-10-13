@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useOutletContext } from "react-router-dom";
 import "./Track.css";
 import meta from "./TrackMeta";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,25 +10,27 @@ export default function Track() {
   const [track, setTrack] = useState("");
   useEffect(() => {
     //API request limit reached
-    // axios({
-    //   method: "GET",
-    //   url: "https://spotify-scraper.p.rapidapi.com/v1/track/metadata",
-    //   params: {
-    //     trackId: id,
-    //   },
-    //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
-    //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
-    //   },
-    // })
-    //   .then((r) => {
-    //     setTrack(r.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    setTrack(meta);
+    axios({
+      method: "GET",
+      url: "https://spotify-scraper.p.rapidapi.com/v1/track/metadata",
+      params: {
+        trackId: id,
+      },
+      headers: {
+        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
+      },
+    })
+      .then((r) => {
+        setTrack(r.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // setTrack(meta);
   }, []);
+
+  const [currentTrack, setCurrentTrack] = useOutletContext();
   return (
     track && (
       <div id="track">
@@ -61,7 +63,7 @@ export default function Track() {
         </div>
         <div id="info">
           <div id="actions">
-            <button id="play">
+            <button id="play" onClick={()=>{setCurrentTrack(id)}}>
             <FontAwesomeIcon icon="fa-solid fa-play" />
             </button>
             <button id="like">
