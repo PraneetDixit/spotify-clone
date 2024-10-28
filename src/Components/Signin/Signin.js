@@ -1,17 +1,18 @@
 import React from 'react';
 import './Signin.css';
+import { Link } from 'react-router-dom';
 
 export default function Signin() {
   return (
     <>
     <div id="signinWrapper">
-      <div class='logo'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg' height={40} width={40}></img>
+      <div className='logo'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg' height={40} width={40} alt='Spotify clone'></img>
       </div>,
-      <div class='form-head'>
+      <div className='form-head'>
         <h1>Login to Spotify</h1>
       </div>,
-      <div class='form'>
+      <div className='form'>
         <form>
           <label>Email or Username</label>
           <input type='email' placeholder='Email or Username'></input><br></br>
@@ -19,8 +20,8 @@ export default function Signin() {
           <input type='password' placeholder='Password'></input>
         </form>
       </div>,
-      <div class='button'><button>Login</button></div>,
-      <p><span>Don't have an account? <a href='http://localhost:3000/signup'>Sign up for spotify</a></span></p>
+      <div className='button'><button>Login</button></div>,
+      <p><span>Don't have an account? <Link to='/signup'>Sign up for spotify</Link></span></p>
       </div>
     </>
   )

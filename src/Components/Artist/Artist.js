@@ -10,25 +10,24 @@ export default function Artist() {
   const [artist, setArtist] = useState("");
   useEffect(() => {
     //API request limit reached
-    // axios({
-    //   method: "GET",
-    //   url: "https://spotify-scraper.p.rapidapi.com/v1/artist/overview",
-    //   params: {
-    //     artistId: id
-    //   },
-    //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
-    //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
-    //   },
-    // })
-    //   .then((r) => {
-    //     setArtist(r.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    setArtist(data);
-  }, []);
+    axios({
+      method: "GET",
+      url: "https://spotify-scraper.p.rapidapi.com/v1/artist/overview",
+      params: {
+        artistId: id
+      },
+      headers: {
+        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
+      },
+    })
+      .then((r) => {
+        setArtist(r.data);
+      })
+      .catch((err) => {
+        setArtist(data);
+      });
+  }, [id]);
   return (
     artist && (<div id="artist">
         <div id="head">
@@ -41,7 +40,7 @@ export default function Artist() {
         <div id="tracks">
             <h2>Popular</h2>
             {artist.discography.topTracks.map((val, ind)=>(
-                <div className="track">
+                <div className="track" key={val.id}>
                     <div className="serial">{ind+1}</div>
                     <img src={val.album.cover[0].url} alt={val.name} width="40"/>
                     <p className="trackName">

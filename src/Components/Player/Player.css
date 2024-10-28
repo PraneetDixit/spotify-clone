@@ -1,0 +1,16 @@
+#placeholder{
+    margin: 0px 9px 8px 9px;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    color: #b3b3b3;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+#player{
+    min-height: 100%;
+    display: flex;
+}

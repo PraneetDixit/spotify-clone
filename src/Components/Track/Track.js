@@ -25,12 +25,12 @@ export default function Track() {
         setTrack(r.data);
       })
       .catch((err) => {
+        setTrack(meta);
         console.log(err);
       });
-    // setTrack(meta);
-  }, []);
+  }, [id]);
 
-  const [currentTrack, setCurrentTrack] = useOutletContext();
+  const [setCurrentTrack] = useOutletContext();
   return (
     track && (
       <div id="track">
@@ -71,8 +71,8 @@ export default function Track() {
             </button>
           </div>
           <div id="contributors">
-            {meta.artists.map((e)=>(
-              <div className="artistTab">
+            {track.artists.map((e)=>(
+              <div className="artistTab" key={e.id}>
                 <img src={e.visuals.avatar[1].url} alt={e.name} />
                 <div>
                   <p>Artist</p>

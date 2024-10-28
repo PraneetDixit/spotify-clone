@@ -12,43 +12,43 @@ export default function Album() {
   const [album, setAlbum] = useState("");
   useEffect(() => {
     //API request limit reached
-    // axios({
-    //   method: "GET",
-    //   url: "https://spotify-scraper.p.rapidapi.com/v1/album/metadata",
-    //   params: {
-    //     albumId: id,
-    //   },
-    //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
-    //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
-    //   },
-    // })
-    //   .then((r) => {
-    //     setAlbumMeta(r.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    // axios({
-    //   method: "GET",
-    //   url: "https://spotify-scraper.p.rapidapi.com/v1/album/tracks",
-    //   params: {
-    //     albumId: id,
-    //   },
-    //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
-    //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
-    //   },
-    // })
-    //   .then((r) => {
-    //     setAlbum(r.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    setAlbumMeta(meta);
-    setAlbum(trackData);
-  }, []);
+    axios({
+      method: "GET",
+      url: "https://spotify-scraper.p.rapidapi.com/v1/album/metadata",
+      params: {
+        albumId: id,
+      },
+      headers: {
+        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
+      },
+    })
+    .then((r) => {
+      setAlbumMeta(r.data);
+    })
+    .catch((err) => {
+        setAlbumMeta(meta);
+        console.log(err);
+      });
+    axios({
+      method: "GET",
+      url: "https://spotify-scraper.p.rapidapi.com/v1/album/tracks",
+      params: {
+        albumId: id,
+      },
+      headers: {
+        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
+      },
+    })
+      .then((r) => {
+        setAlbum(r.data);
+      })
+      .catch((err) => {
+        setAlbum(trackData);
+        // console.log(err);
+      });
+  }, [id]);
   return (
     albumMeta &&
     album && (
@@ -73,7 +73,7 @@ export default function Album() {
         <div id="tracks">
           <h2>Popular</h2>
           {album.tracks.items.map((val, ind) => (
-            <div className="track">
+            <div className="track" key={val.id}>
               <div className="serial">{ind + 1}</div>
               <div>
                 <p className="trackName">
@@ -81,7 +81,7 @@ export default function Album() {
                 </p>
                 <p className="artistList">
                   {val.artists.map((e, ind) => (
-                    <Link to={`/artist/${e.id}`}>{`${e.name}${
+                    <Link to={`/artist/${e.id}`} key={e.id}>{`${e.name}${
                       ind + 1 === val.artists.length ? "" : ","
                     }`}</Link>
                   ))}

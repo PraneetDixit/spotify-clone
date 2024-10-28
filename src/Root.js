@@ -16,7 +16,7 @@ export default function Root() {
             <Library/>
           </div>
           <div id="routeWrapper">
-            <Outlet context={[currentTrack, setCurrentTrack]}/>
+            <Outlet context={[setCurrentTrack]}/>
           </div>
         </div>
         <div id="playerWrapper">

@@ -1,18 +1,19 @@
 import React from 'react';
 import './Signup.css';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   return (
     <>
     <div id="signupWrapper">
-      <div class='logo'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg' height={40} width={40}></img>
+      <div className='logo'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg' height={40} width={40} alt='Spotify clone'></img>
       </div>,
-      <div class='form-head'>
+      <div className='form-head'>
         <h1>Sign up to</h1>
         <h1>start listening</h1>
       </div>,
-      <div class='form'>
+      <div className='form'>
         <form>
           <label>Email address</label>
           <input type='email' placeholder='name@domain.com'></input><br></br>
@@ -20,11 +21,11 @@ export default function Signup() {
           <input type='password' placeholder='set password'></input>
         </form>
       </div>,
-      <div class='option'>
-        <a href='#'>Use phone number instead.</a>
+      <div className='option'>
+        <a href='/'>Use phone number instead.</a>
       </div>,
-      <div class='button'><button>Sign Up</button></div>,
-      <p><span>Already have an account?<a href='http://localhost:3000/signin'> Log in here</a></span></p>
+      <div className='button'><button>Sign Up</button></div>,
+      <p><span>Already have an account?<Link to='/signin'> Log in here</Link></span></p>
      </div> 
     </>
   )

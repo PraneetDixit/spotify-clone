@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
@@ -6,7 +6,7 @@ import "./Home.css";
 import data from "../../Resp";
 import { useNavigate } from "react-router-dom";
 
-export default function () {
+export default function Home () {
 
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ export default function () {
       >
         {artistData &&
           artistData.map((ind) => (
-            <SplideSlide>
+            <SplideSlide key={ind.id}>
               <div className="card artist" onClick={()=>navigate(`/artist/${ind.id}`)}>
                 <img src={ind.visuals.avatar[0].url} alt={ind.name} />
                 <p>{ind.name}</p>
@@ -67,7 +67,7 @@ export default function () {
       >
         {albumData &&
           albumData.map((ind) => (
-            <SplideSlide>
+            <SplideSlide key={ind.id}>
               <div className="card album">
                 <img src={ind.cover[1].url} alt={ind.name} onClick={()=>navigate(`/album/${ind.id}`)}/>
                 <p>{ind.name}</p>
