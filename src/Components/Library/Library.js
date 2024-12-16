@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Library.css'
 
@@ -23,13 +24,13 @@ export default function Library() {
         </div>
         <div id="libTitles">
           {saved && Object.entries(saved).map(([key, item], index)=>(
-            <div className="libCard" key={index}>
+            <Link to={`/track/${item.id}`} className="libCard" key={index}>
               <img src={item.album.cover[0].url}/>
               <div className="libCardText">
                 <p className="cardTitle">{item.name}</p>
                 <p className="cardArtists">{item.artists[0].name}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
     </div>

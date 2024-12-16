@@ -18,24 +18,24 @@ export default function Track() {
   });
   useEffect(() => {
     //API request limit reached
-    // axios({
-    //   method: "GET",
-    //   url: "https://spotify-scraper.p.rapidapi.com/v1/track/metadata",
-    //   params: {
-    //     trackId: id,
-    //   },
-    //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
-    //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
-    //   },
-    // })
-    //   .then((r) => {
-    //     setTrack(r.data);
-    //   })
-    //   .catch((err) => {
+    axios({
+      method: "GET",
+      url: "https://spotify-scraper.p.rapidapi.com/v1/track/metadata",
+      params: {
+        trackId: id,
+      },
+      headers: {
+        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
+      },
+    })
+      .then((r) => {
+        setTrack(r.data);
+      })
+      .catch((err) => {
     setTrack(meta);
-    //   console.log(err);
-    // });
+      console.log(err);
+    });
   }, [id]);
 
   useEffect(() => {

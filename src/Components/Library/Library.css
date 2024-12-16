@@ -8,6 +8,12 @@
     font-size: 22px;
     display: flex;
     align-items: center;
+    margin-bottom: 12px;
+}
+
+#libTitles{
+    overflow-y: auto;
+    max-height: calc(100% - 40px);
 }
 
 #libTitle div{
@@ -15,4 +21,35 @@
     font-weight: 600;
     margin-left: 10px;
     color: #b3b3b3;
+}
+
+.libCard{
+    display: flex;
+    padding: 9px;
+    background: #1f1f1f;
+    border-radius: 5px;
+    color: white;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.libCard img{
+    border-radius: 4px;
+    display: block;
+    aspect-ratio: 1;
+}
+
+.libCardText{
+    padding-left: 8px;
+}
+
+.cardTitle{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cardArtists{
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(255 255 255 / 70%);
 }
