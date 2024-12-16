@@ -23,7 +23,7 @@ export default function Navbar() {
   }
 
   const handleKeyDown = (key) =>{
-    if (key == "Enter"){
+    if (key === "Enter"){
       handleSearch();
     }
   }

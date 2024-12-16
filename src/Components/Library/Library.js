@@ -15,7 +15,6 @@ export default function Library() {
       }
     })
   },[]);
-  useEffect(()=>{console.log(saved)}, [saved]);
   return (
     <div id="libraryInnerWrapper">
         <div id="libTitle">
@@ -25,7 +24,7 @@ export default function Library() {
         <div id="libTitles">
           {saved && Object.entries(saved).map(([key, item], index)=>(
             <Link to={`/track/${item.id}`} className="libCard" key={index}>
-              <img src={item.album.cover[0].url}/>
+              <img src={item.album.cover[0].url} alt={item.name}/>
               <div className="libCardText">
                 <p className="cardTitle">{item.name}</p>
                 <p className="cardArtists">{item.artists[0].name}</p>
