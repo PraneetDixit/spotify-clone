@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  let navigate = useNavigate();
   const [term, setTerm] = useState("");
 
   const handleChange = (e) => {
@@ -12,6 +13,19 @@ export default function Navbar() {
 
   const clearTerm = () =>{
     setTerm("");
+  }
+
+  const handleSearch = () =>{
+    if (term.trim()){
+      navigate(`/search/${term}`);
+      clearTerm();
+    }
+  }
+
+  const handleKeyDown = (key) =>{
+    if (key == "Enter"){
+      handleSearch();
+    }
   }
 
   return (
@@ -44,8 +58,9 @@ export default function Navbar() {
             placeholder="What do you want to play?"
             value={term}
             onChange={handleChange}
+            onKeyUp={(e)=>{handleKeyDown(e.key)}}
           />
-          <button id="search">
+          <button id="search" onClick={handleSearch}>
             <FontAwesomeIcon
               icon="fa-solid fa-magnifying-glass"
               style={{ color: "inherit" }}
