@@ -1,80 +1,61 @@
 #signupWrapper {
     background-color: rgb(20, 20, 20);
-    box-sizing: border-box;
-}
-
-#signupWrapper a {
-    color: white;
-}
-
-#signupWrapper span {
-    color: rgb(119, 116, 116);
-}
-
-.logo {
+    min-height: 100vh;
+    padding: 30px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 30px;
 }
 
 .form-head h1 {
     font-size: xx-large;
     font-weight: 1000;
-    margin: 0;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
     color: white;
 }
+
 #signupWrapper label{
     font-weight: bold;
     color: white;
     margin: 4px;
 }
 
-.form {
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-    color: white;
+form{
+    padding: 10px;
 }
 
 #signupWrapper input {
+    display: block;
     margin: 5px;
-    width: 90%;
+    width: 400px;
     font-size: medium;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 2px solid rgb(20,20,20);
     border-radius: 3px;
 }
 
-#username {
-    border-radius: 4px;
-}
-.option{
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;
-}
-.option a{
+#signupWrapper a{
     color: #1ED760;
 }
-.button{
-    display: flex;
-    justify-content: center;
-}
+
 #signupWrapper button {
+    display: block;
+    width: 400px;
     background-color: #1ED760;
     color: black;
     font-size: large;
     border: none;
-    width: 20rem;
     padding: 15px 24px;
     border-radius: 30px;
     cursor: pointer;
+    margin-top: 20px;
 }
 #signupWrapper p{
     text-align: center;
+    color: white;
 }
 #signupWrapper button:hover{
     background-color: #6cdb93;

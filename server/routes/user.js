@@ -22,12 +22,32 @@ user_route.post("/signup", async (req, res) => {
                 password: hashedPassword,
             });
             await user.save();
-            res.status(201).json({ message: "Registered successfully" });
+
+            // Auto login after registration
+            let accessToken = jwt.sign(
+                {
+                    data: email,
+                },
+                secret,
+                { expiresIn: 60 * 60 * 24 }
+            );
+
+            req.session.authorization = {
+                accessToken,
+                email,
+            };
+            return res.status(201).json({message:"User successfully registered and logged in", accessToken: accessToken});
+            // res.status(201).json({ message: "Registered successfully" });
         }
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 });
+
+// user_route.get("/logout", async (req, res) => {
+//     req.session.destroy();
+//     res.status(200).json({ message: "User logged out" });
+// });
 
 user_route.post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -52,7 +72,11 @@ user_route.post("/login", async (req, res) => {
                 accessToken,
                 email,
             };
+
+            // console.log("In login route");
+            // console.log(req.session);
             return res.status(200).send("User successfully logged in");
+            // return res.status(200).json({message:"User successfully logged in", accessToken: accessToken});
         }
         res.status(400).json({ message: "Incorrect password" });
     } catch (err) {
@@ -61,16 +85,17 @@ user_route.post("/login", async (req, res) => {
 });
 
 user_route.post("/logout", async (req, res) => {
+    req.session.authorization = "";
     req.session.destroy();
     res.status(200).json({ message: "User logged out" });
 });
 
-user_route.get("/auth/", async (req, res) => {
+user_route.get("/auth", async (req, res) => {
     const email = req.email;
+    console.log(email);
     try {
         const user = await Users.findOne({ email: email });
-        const liked = user.liked;
-        res.status(200).json(liked);
+        res.status(200).json(user);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }

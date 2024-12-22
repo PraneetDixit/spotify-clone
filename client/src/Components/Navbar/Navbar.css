@@ -1,116 +1,117 @@
 nav {
-  display: flex;
-  padding: 8px 25px;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    padding: 8px 25px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav > a {
-  display: flex;
-  align-items: center;
-  font-size: 35px;
-  padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    padding: 5px;
 }
 
 .midBar {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .midBar > a {
-  font-size: 22px;
-  padding: 13px;
-  background: #1f1f1f;
-  border-radius: 50%;
-  display: flex;
-  aspect-ratio: 1;
-  position: relative;
-  transition: transform 0.1s;
+    font-size: 22px;
+    padding: 13px;
+    background: #1f1f1f;
+    border-radius: 50%;
+    display: flex;
+    aspect-ratio: 1;
+    position: relative;
+    transition: transform 0.1s;
 }
 
 .midBar > a:hover {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 .midBar > a:focus {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .auth button {
-  font-size: 16px;
-  border-radius: 25px;
-  border: none;
-  padding: 15px 28px;
-  margin-left: 10px;
-  font-weight: bold;
-  transition: transform 0.1s;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    padding: 15px 28px;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: transform 0.1s;
 }
 
 .auth button:active {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 .auth button:hover {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
 
 .signUp {
-  background-color: transparent;
-  color: #b3b3b3;
+    background-color: transparent;
+    color: #b3b3b3;
 }
 
 .signUp:hover {
-  color: white;
+    color: white;
 }
 
 .signIn {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .signIn:hover {
-  opacity: 0.95;
+    opacity: 0.95;
 }
 
 .searchBox {
-  margin-left: 10px;
-  width: 450px;
-  position: relative;
-  display: flex;
+    margin-left: 10px;
+    width: 450px;
+    position: relative;
+    display: flex;
 }
 
 #searchTerm {
-  width: 100%;
-  border: 2px solid #1f1f1f;
-  display: block;
-  background-color: #1f1f1f;
-  padding: 15px 50px;
-  border-radius: 26px;
-  font-size: 16px;
-  color: white;
-  caret-color: white;
-  outline: none;
-  transition: border-color 0.1s, background-color 0.2s;
-  cursor: pointer;
+    width: 100%;
+    border: 2px solid #1f1f1f;
+    display: block;
+    background-color: #1f1f1f;
+    padding: 15px 50px;
+    border-radius: 26px;
+    font-size: 16px;
+    color: white;
+    caret-color: white;
+    outline: none;
+    transition: border-color 0.1s, background-color 0.2s;
+    cursor: pointer;
 }
 
-#searchTerm:hover, #searchTerm:focus{
+#searchTerm:hover,
+#searchTerm:focus {
     background-color: #2a2a2a;
 }
 
-#searchTerm:focus{
-    cursor: text    ;
+#searchTerm:focus {
+    cursor: text;
 }
 
 #searchTerm::placeholder {
-  color: #b3b3b3;
+    color: #b3b3b3;
 }
 
 #searchTerm:focus {
-  border: 2px solid white;
+    border: 2px solid white;
 }
 
-#search{
+#search {
     position: absolute;
     left: 0px;
     height: 100%;
@@ -118,18 +119,19 @@ nav > a {
     background-color: transparent;
     border: none;
     font-size: 22px;
-    vertical-align:middle;
+    vertical-align: middle;
     padding-top: 5px;
     padding-left: 10px;
     color: #b3b3b3;
     transition: color 0.1s;
 }
 
-.searchBox:hover #search, #searchTerm:focus + button{
+.searchBox:hover #search,
+#searchTerm:focus + button {
     color: white;
 }
 
-#clear{
+#clear {
     position: absolute;
     right: 0px;
     height: 100%;
@@ -137,12 +139,62 @@ nav > a {
     background-color: transparent;
     border: none;
     font-size: 22px;
-    vertical-align:middle;
+    vertical-align: middle;
     padding-right: 10px;
     color: #b3b3b3;
     transition: color 0.1s;
 }
 
-#clear:hover{
+#clear:hover {
     color: white;
+}
+
+.userWidget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.avatar {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 22px;
+    aspect-ratio: 1;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a17862;
+    border-radius: 50%;
+}
+
+.avatar:hover{
+    background-color: #bc8d74;
+}
+
+.tab {
+    padding: 11px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tab:hover{
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.userActions{
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    flex-shrink: 0;
+    width: 160px;
+    right: -10px;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0px 0px 4px 3px #1f1f1f44;
 }
