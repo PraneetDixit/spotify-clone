@@ -18,6 +18,8 @@ export default function Root() {
             });
             console.log(resp);
             setUser(null);
+            localStorage.removeItem("spotifyUserLibrary");
+            window.dispatchEvent(new Event("storage"));
         } catch (err) {
             console.error(err);
         }

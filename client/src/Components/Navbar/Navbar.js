@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Navbar({ user, logout }) {
     let navigate = useNavigate();
     const [term, setTerm] = useState("");
+    const [showOptions, setShowOptions] = useState(false);
 
     const handleChange = (e) => {
         setTerm(e.target.value);
@@ -73,13 +74,13 @@ export default function Navbar({ user, logout }) {
             <div className="auth">
                 {user ? (
                     <div className="userWidget">
-                        <div className="avatar">
+                        <div className="avatar" onClick={() => setShowOptions(!showOptions)}>
                             {user.username.slice(0, 1).toUpperCase()}
                         </div>
-                        <div className="userActions">
-                          <div className="tab">{user.username}</div>
-                          <div className="tab" onClick={logout}>
-                            Log Out
+                        <div className="userActions" style={showOptions ? { display: "block" } : { display: "none" }}>
+                            <div className="tab">{user.username}</div>
+                            <div className="tab" onClick={logout}>
+                                Log Out
                             </div>
                         </div>
                     </div>
