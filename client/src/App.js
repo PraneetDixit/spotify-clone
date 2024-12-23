@@ -20,6 +20,7 @@ import Artist from "./Components/Artist/Artist";
 import Album from "./Components/Album/Album"
 import Track from "./Components/Track/Track";
 import Search from "./Components/Search/Search";
+import Playlist from "./Components/Playlist/Playlist";
 
 library.add(fab, faHouse, faMagnifyingGlass, faXmark, faBook, faPlay, faHeart, faCircleCheck, faCopy);
 
@@ -47,6 +48,10 @@ function App() {
         {
           path: "search/:keyword",
           element: <Search />
+        },
+        {
+          path: "playlist/:id",
+          element: <Playlist />
         }
       ],
     },

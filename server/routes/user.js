@@ -131,4 +131,14 @@ user_route.post("/auth/playlist", async (req,res)=>{
     }
 });
 
+user_route.get("/playlist/:id", async (req,res)=>{
+    const id = req.params.id;
+    try{
+        const playlist = await Playlists.findOne({id:id});
+        res.status(200).json({id: playlist.id, user: playlist.user, liked: playlist.liked});
+    }catch(err){
+        res.status(400).json({message:err.message});
+    }
+});
+
 module.exports = user_route;
