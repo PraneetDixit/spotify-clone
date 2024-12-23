@@ -5,6 +5,8 @@ import "./Track.css";
 import meta from "./TrackMeta";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const key = process.env.REACT_APP_RAPIDAPI_KEY;
+
 export default function Track() {
     const { id } = useParams();
     const [track, setTrack] = useState("");
@@ -29,7 +31,7 @@ export default function Track() {
             },
             headers: {
                 "x-rapidapi-key":
-                    "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+                    key,
                 "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
             },
         })

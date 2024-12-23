@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema({
     liked: {
         type: Object,
         default: {}
+    },
+    shareID:{
+        type: String
     }
 });
 

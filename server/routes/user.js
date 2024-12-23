@@ -2,11 +2,13 @@ const express = require("express");
 const user_route = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const {nanoid} = require("nanoid");
 require("dotenv").config();
 
 const secret = process.env.JWT_SECRET;
 
 const Users = require("../models/users");
+const Playlists = require("../models/playlists")
 
 user_route.post("/signup", async (req, res) => {
     const { username, email, password } = req.body;
@@ -44,11 +46,6 @@ user_route.post("/signup", async (req, res) => {
     }
 });
 
-// user_route.get("/logout", async (req, res) => {
-//     req.session.destroy();
-//     res.status(200).json({ message: "User logged out" });
-// });
-
 user_route.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -73,10 +70,7 @@ user_route.post("/login", async (req, res) => {
                 email,
             };
 
-            // console.log("In login route");
-            // console.log(req.session);
             return res.status(200).send("User successfully logged in");
-            // return res.status(200).json({message:"User successfully logged in", accessToken: accessToken});
         }
         res.status(400).json({ message: "Incorrect password" });
     } catch (err) {
@@ -111,6 +105,29 @@ user_route.put("/auth/like", async (req, res) => {
         res.status(200).json({ message: "Liked successfully" });
     } catch (err) {
         res.status(400).json({ message: err.message });
+    }
+});
+
+user_route.post("/auth/playlist", async (req,res)=>{
+    const email = req.email;
+    try{
+        const user = await Users.findOne({email:email});
+        user.shareID = user.shareID? user.shareID : nanoid();
+        await user.save();
+        let playlist = await Playlists.findOne({id:user.shareID});
+        if(playlist){
+            playlist.liked = user.liked;
+        }else{
+            playlist = new Playlists({
+                id: user.shareID,
+                user: user.username,
+                liked: user.liked
+            });
+        }
+        playlist.save();
+        res.status(201).json({message:"Playlist created successfully", data: user.shareID});
+    }catch(err){
+        res.status(400).json({message:err.message});
     }
 });
 

@@ -5,6 +5,8 @@ import "./Artist.css";
 import { Link, useParams } from "react-router-dom";
 import data from "./Resp";
 
+const key = process.env.REACT_APP_RAPIDAPI_KEY;
+
 export default function Artist() {
   const { id } = useParams();
   const [artist, setArtist] = useState("");
@@ -17,7 +19,7 @@ export default function Artist() {
         artistId: id
       },
       headers: {
-        "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+        "x-rapidapi-key": key,
         "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
       },
     })

@@ -53,3 +53,28 @@
     font-weight: 500;
     color: rgb(255 255 255 / 70%);
 }
+
+#shareWrapper{
+    margin-bottom: 10px;
+}
+
+#share, #copy{
+    padding: 12px 20px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #1f1f1f;
+    color: white;
+    font-weight: 600;
+}
+
+#copy{
+    padding: 12px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+#shareWrapper span{
+    color: white;
+}

@@ -11,7 +11,8 @@ import {
   faXmark,
   faBook,
   faPlay,
-  faCircleCheck
+  faCircleCheck,
+  faCopy
 } from "@fortawesome/free-solid-svg-icons";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import Home from "./Components/Home/Home";
@@ -20,7 +21,7 @@ import Album from "./Components/Album/Album"
 import Track from "./Components/Track/Track";
 import Search from "./Components/Search/Search";
 
-library.add(fab, faHouse, faMagnifyingGlass, faXmark, faBook, faPlay, faHeart, faCircleCheck);
+library.add(fab, faHouse, faMagnifyingGlass, faXmark, faBook, faPlay, faHeart, faCircleCheck, faCopy);
 
 function App() {
   const router = createBrowserRouter([

@@ -5,6 +5,8 @@ import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
+const key = process.env.REACT_APP_RAPIDAPI_KEY;
+
 export default function Search() {
     const navigate = useNavigate();
     const { keyword } = useParams();
@@ -20,7 +22,7 @@ export default function Search() {
             },
             headers: {
                 "x-rapidapi-key":
-                    "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+                    key,
                 "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
             },
         })

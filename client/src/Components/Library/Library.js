@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Library({ user }) {
     const [saved, setSaved] = useState({});
+    const [copyLink, setCopyLink] = useState("");
 
     const updateServerLib = async (data) => {
         try {
@@ -23,10 +24,10 @@ export default function Library({ user }) {
         const preSaved = localStorage.getItem("spotifyLibrary");
         const preSavedUser = localStorage.getItem("spotifyUserLibrary");
         console.log("From storage");
-        if(preSavedUser){
-          setSaved(JSON.parse(preSavedUser));
-          updateServerLib(JSON.parse(preSavedUser));
-        }else if (preSaved) {
+        if (preSavedUser) {
+            setSaved(JSON.parse(preSavedUser));
+            updateServerLib(JSON.parse(preSavedUser));
+        } else if (preSaved) {
             setSaved(JSON.parse(preSaved));
         } else {
             setSaved({});
@@ -44,10 +45,30 @@ export default function Library({ user }) {
                 "spotifyUserLibrary",
                 user.liked ? JSON.stringify(user.liked) : "{}"
             );
-            // setUserFlag(true);
+            setCopyLink(user.playlist);
             setLib();
         }
     }, [user]);
+
+    const handleShare = async () => {
+        try {
+            const id = await axios.post(
+                `${process.env.REACT_APP_SERVER_URL}/user/auth/playlist`,
+                {},
+                { withCredentials: true }
+            );
+            setCopyLink(id.data.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(
+            `${window.location.origin}/playlist/${copyLink}`
+        );
+        alert("Link copied");
+    };
     return (
         <div id="libraryInnerWrapper">
             <div id="libTitle">
@@ -57,6 +78,27 @@ export default function Library({ user }) {
                 />
                 <div>Your Library</div>
             </div>
+            {user && Object.entries(saved).length ? (
+                <div id="shareWrapper">
+                    {copyLink ? (
+                        <>
+                            <span>Copy your custom link</span>
+                            <button id="copy" onClick={handleCopy}>
+                                <FontAwesomeIcon
+                                    icon="fa-solid fa-copy"
+                                    style={{ color: "inherit" }}
+                                />
+                            </button>
+                        </>
+                    ) : (
+                        <button id="share" onClick={handleShare}>
+                            Share your playlist
+                        </button>
+                    )}
+                </div>
+            ) : (
+                ""
+            )}
             <div id="libTitles">
                 {saved &&
                     Object.entries(saved).map(([key, item], index) => (

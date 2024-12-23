@@ -6,6 +6,8 @@ import "./Home.css";
 import data from "../../Resp";
 import { useNavigate } from "react-router-dom";
 
+const key = process.env.REACT_APP_RAPIDAPI_KEY;
+
 export default function Home () {
 
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ export default function Home () {
     //   method: "GET",
     //   url: "https://spotify-scraper.p.rapidapi.com/v1/home",
     //   headers: {
-    //     "x-rapidapi-key": "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+    //     "x-rapidapi-key": key,
     //     "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
     //   },
     // })
