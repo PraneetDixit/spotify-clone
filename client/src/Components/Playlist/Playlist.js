@@ -7,12 +7,14 @@ export default function Playlist() {
     const { id } = useParams();
     const [playlist, setPlaylist] = useState({});
     useEffect(() => {
+        if(id){
         axios
             .get(`${process.env.REACT_APP_SERVER_URL}/user/playlist/${id}`)
             .then((r) => {
                 setPlaylist(r.data);
             })
             .catch((err) => console.error(err));
+        }
     }, [id]);
     return (
         <div id="playlist">
@@ -23,6 +25,7 @@ export default function Playlist() {
                 </div>
             </div>
             <div id="tracks">
+                {playlist &&(<>
                 {Object.entries(playlist.liked).map(([key, val], ind) => (
                     <div className="track" key={key}>
                         <div className="serial">{ind + 1}</div>
@@ -47,7 +50,7 @@ export default function Playlist() {
                         </div>
                         <span className="duration">{val.durationText}</span>
                     </div>
-                ))}
+                ))}</>)}
             </div>
         </div>
     );
