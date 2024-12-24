@@ -40,6 +40,7 @@ app.use(
             httpOnly: true,
             secure: env === "PROD" ? true : false,
             sameSite: env === "PROD" ? 'none' : 'lax',
+            partitioned: env == "PROD" ? true : false,
         },
         store: MongoStore.create({
             mongoUrl: url,
