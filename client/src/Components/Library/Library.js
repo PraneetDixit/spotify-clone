@@ -36,6 +36,7 @@ export default function Library({ user }) {
     useEffect(() => {
         window.addEventListener("storage", setLib);
         setLib();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     useEffect(() => {
         if (user) {
@@ -48,6 +49,7 @@ export default function Library({ user }) {
             setCopyLink(user.playlist);
             setLib();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     const handleShare = async () => {

@@ -12,7 +12,7 @@ export default function Signup() {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         const name = document.getElementById("name").value;
-        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             alert("Please enter a valid email address");
             return;
         }

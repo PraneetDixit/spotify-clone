@@ -6,7 +6,7 @@ import "./Home.css";
 import data from "../../Resp";
 import { useNavigate } from "react-router-dom";
 
-const key = process.env.REACT_APP_RAPIDAPI_KEY;
+// const key = process.env.REACT_APP_RAPIDAPI_KEY;
 
 export default function Home () {
 
