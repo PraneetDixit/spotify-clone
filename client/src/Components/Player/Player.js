@@ -4,6 +4,8 @@ import axios from "axios";
 import track from "./Track";
 import AudioPlayer from "react-modern-audio-player";
 
+const key = process.env.REACT_APP_RAPIDAPI_KEY;
+
 export default function Player({currentTrack}) {
   const [trackInfo, setTrackInfo] = useState(null);
 
@@ -20,7 +22,7 @@ export default function Player({currentTrack}) {
           },
           headers: {
             "x-rapidapi-key":
-              "c456acda40msh012159dc2abc3c9p1bbeb1jsn33ef9596085f",
+              key,
             "x-rapidapi-host": "spotify-scraper.p.rapidapi.com",
           },
         })
