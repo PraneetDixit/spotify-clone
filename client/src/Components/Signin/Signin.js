@@ -41,11 +41,11 @@ export default function Signin() {
                         src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
                         height={40}
                         width={40}
-                        alt="Spotify clone"
+                        alt="SWGfy"
                     ></img>
                 </div>
                 <div className="form-head">
-                    <h1>Login to Spotify</h1>
+                    <h1>Login to SWGfy</h1>
                 </div>
                 <form>
                     <label>Email or Username</label>
@@ -60,7 +60,7 @@ export default function Signin() {
                 </form>
                 <p>
                     Don't have an account?{" "}
-                    <Link to="/signup">Sign up for spotify</Link>
+                    <Link to="/signup">Sign up for SWGfy</Link>
                 </p>
             </div>
         </>

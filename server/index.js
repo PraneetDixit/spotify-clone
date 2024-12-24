@@ -43,7 +43,7 @@ app.use(
             // partitioned: node_env == "PROD" ? true : false,
             secure: true,
             sameSite: 'none',
-            // partitioned: true,
+            partitioned: true,
         },
         store: MongoStore.create({
             mongoUrl: url,

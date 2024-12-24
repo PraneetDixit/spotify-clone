@@ -46,7 +46,7 @@ export default function Signup() {
                     src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
                     height={40}
                     width={40}
-                    alt="Spotify clone"
+                    alt="SWGfy clone"
                 ></img>
                 <div className="form-head">
                     <h1>Sign up to</h1>
