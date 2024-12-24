@@ -12,6 +12,7 @@ export default function Playlist() {
             .get(`${process.env.REACT_APP_SERVER_URL}/user/playlist/${id}`)
             .then((r) => {
                 setPlaylist(r.data);
+                console.log(r.data);
             })
             .catch((err) => console.error(err));
         }
@@ -25,7 +26,7 @@ export default function Playlist() {
                 </div>
             </div>
             <div id="tracks">
-                {playlist &&(<>
+                {playlist.user &&(<>
                 {Object.entries(playlist.liked).map(([key, val], ind) => (
                     <div className="track" key={key}>
                         <div className="serial">{ind + 1}</div>
