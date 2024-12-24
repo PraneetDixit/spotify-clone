@@ -38,6 +38,7 @@ user_route.post("/signup", async (req, res) => {
                 accessToken,
                 email,
             };
+            await req.session.save();
             return res.status(201).json({message:"User successfully registered and logged in", accessToken: accessToken});
             // res.status(201).json({ message: "Registered successfully" });
         }
@@ -70,6 +71,8 @@ user_route.post("/login", async (req, res) => {
                 email,
             };
 
+            await req.session.save();
+
             return res.status(200).send("User successfully logged in");
         }
         res.status(400).json({ message: "Incorrect password" });
@@ -80,7 +83,7 @@ user_route.post("/login", async (req, res) => {
 
 user_route.post("/logout", async (req, res) => {
     req.session.authorization = "";
-    req.session.destroy();
+    await req.session.destroy();
     res.status(200).json({ message: "User logged out" });
 });
 

@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const user_route = require("./routes/user");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const MongoStore = require("connect-mongo");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ const url = process.env.MONGO_CONNECTION_STRING;
 const secret = process.env.JWT_SECRET;
 const sessionSecret = process.env.SESSION_SECRET;
 const client = process.env.CLIENT_URL;
+const env = process.env.NODE_ENV;
 
 mongoose.connect(url);
 
@@ -32,13 +34,16 @@ app.use(
     "/user",
     session({
         secret: sessionSecret,
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: false, // Set to true if using HTTPS
-            sameSite: 'lax', // Adjust as needed
+            secure: env === "PROD" ? true : false,
+            sameSite: env === "PROD" ? 'none' : 'lax',
         },
+        store: MongoStore.create({
+            mongoUrl: url,
+        })
     })
 );
 
