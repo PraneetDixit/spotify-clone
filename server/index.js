@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use(
     "/user",
@@ -41,9 +41,11 @@ app.use(
             // secure: node_env == "PROD" ? true : false,
             // sameSite: node_env == "PROD" ? 'none' : 'lax',
             // partitioned: node_env == "PROD" ? true : false,
-            secure: true,
-            sameSite: 'none',
-            partitioned: true,
+            // secure: true,
+            // sameSite: 'none',
+            // partitioned: true,
+            secure: false,
+            sameSite: 'lax',
         },
         store: MongoStore.create({
             mongoUrl: url,
