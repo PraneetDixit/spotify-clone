@@ -14,7 +14,7 @@ const url = process.env.MONGO_CONNECTION_STRING;
 const secret = process.env.JWT_SECRET;
 const sessionSecret = process.env.SESSION_SECRET;
 const client = process.env.CLIENT_URL;
-const env = process.env.NODE_ENV;
+const node_env = process.env.NODE_ENV;
 
 mongoose.connect(url);
 
@@ -38,9 +38,9 @@ app.use(
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: env === "PROD" ? true : false,
-            sameSite: env === "PROD" ? 'none' : 'lax',
-            partitioned: env == "PROD" ? true : false,
+            secure: node_env == "PROD" ? true : false,
+            sameSite: node_env == "PROD" ? 'none' : 'lax',
+            partitioned: node_env == "PROD" ? true : false,
         },
         store: MongoStore.create({
             mongoUrl: url,
