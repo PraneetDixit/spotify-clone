@@ -33,7 +33,7 @@ export default function Navbar({ user, logout }) {
         <nav>
             <Link to="/">
                 <FontAwesomeIcon
-                    icon="fa-brands fa-spotify"
+                    icon="fa-solid fa-music"
                     style={{ color: "#ffffff" }}
                 />
             </Link>

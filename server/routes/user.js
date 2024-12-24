@@ -73,6 +73,8 @@ user_route.post("/login", async (req, res) => {
 
             await req.session.save();
 
+            req.cookies.accessToken = accessToken;
+
             return res.status(200).send("User successfully logged in");
         }
         res.status(400).json({ message: "Incorrect password" });

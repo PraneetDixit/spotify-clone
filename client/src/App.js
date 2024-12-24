@@ -4,7 +4,7 @@ import Root from "./Root";
 import Signin from "./Components/Signin/Signin";
 import Signup from "./Components/Signup/Signup";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+// import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
   faHouse,
   faMagnifyingGlass,
@@ -12,7 +12,8 @@ import {
   faBook,
   faPlay,
   faCircleCheck,
-  faCopy
+  faCopy,
+  faMusic
 } from "@fortawesome/free-solid-svg-icons";
 import {faHeart} from "@fortawesome/free-regular-svg-icons"
 import Home from "./Components/Home/Home";
@@ -22,7 +23,7 @@ import Track from "./Components/Track/Track";
 import Search from "./Components/Search/Search";
 import Playlist from "./Components/Playlist/Playlist";
 
-library.add(fab, faHouse, faMagnifyingGlass, faXmark, faBook, faPlay, faHeart, faCircleCheck, faCopy);
+library.add(faHouse, faMagnifyingGlass, faXmark, faBook, faPlay, faHeart, faCircleCheck, faCopy, faMusic);
 
 function App() {
   const router = createBrowserRouter([

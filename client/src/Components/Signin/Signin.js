@@ -38,9 +38,9 @@ export default function Signin() {
             <div id="signinWrapper">
                 <div className="logo">
                     <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
-                        height={40}
-                        width={40}
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png"
+                        height={50}
+                        width={50}
                         alt="SWGfy"
                     ></img>
                 </div>
