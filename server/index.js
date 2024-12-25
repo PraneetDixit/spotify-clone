@@ -35,7 +35,7 @@ app.use(
     session({
         secret: sessionSecret,
         resave: false,
-        saveUninitialized: false,
+        saveUninitialized: true,
         cookie: {
             httpOnly: true,
             // secure: node_env == "PROD" ? true : false,
@@ -52,6 +52,8 @@ app.use(
         })
     })
 );
+
+app.set('trust proxy', 1) ;
 
 app.use("/user/auth/*", function auth(req, res, next) {
     // console.log("Cookies");
