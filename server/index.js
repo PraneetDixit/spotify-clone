@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const user_route = require("./routes/user");
 const session = require("express-session");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
 const cors = require("cors");
 require("dotenv").config();
@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use(
     "/user",
@@ -39,10 +39,10 @@ app.use(
         cookie: {
             httpOnly: true,
             // secure: node_env == "PROD" ? true : false,
-            // sameSite: node_env == "PROD" ? 'none' : 'lax',
-            // partitioned: node_env == "PROD" ? true : false,
-            secure: true,
-            sameSite: 'none',
+            sameSite: node_env == "PROD" ? 'none' : 'lax',
+            partitioned: node_env == "PROD" ? true : false,
+            // secure: true,
+            // sameSite: 'none',
             // partitioned: true,
             // secure: false,
             // sameSite: 'lax',
@@ -53,7 +53,9 @@ app.use(
     })
 );
 
-app.set('trust proxy', 1) ;
+if (node_env == "PROD") {
+    app.set('trust proxy', 1) ;
+}
 
 app.use("/user/auth/*", function auth(req, res, next) {
     // console.log("Cookies");
