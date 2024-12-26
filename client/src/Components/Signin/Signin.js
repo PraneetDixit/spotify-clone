@@ -42,11 +42,11 @@ export default function Signin() {
                         src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png"
                         height={50}
                         width={50}
-                        alt="SWGfy"
+                        alt="Pitchnest"
                     ></img>
                 </div>
                 <div className="form-head">
-                    <h1>Login to SWGfy</h1>
+                    <h1>Login to Pitchnest</h1>
                 </div>
                 <form>
                     <label>Email or Username</label>
@@ -61,7 +61,7 @@ export default function Signin() {
                 </form>
                 <p>
                     Don't have an account?&nbsp;
-                    <Link to="/signup">Sign up for SWGfy</Link>
+                    <Link to="/signup">Sign up for Pitchnest</Link>
                 </p>
                 </div>
             </div>

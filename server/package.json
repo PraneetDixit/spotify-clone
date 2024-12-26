@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Backend for Spotify Clone app",
+  "description": "Backend for Pitchnest",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

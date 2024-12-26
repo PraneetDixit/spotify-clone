@@ -47,7 +47,7 @@ export default function Signup() {
                     src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png"
                     height={50}
                     width={50}
-                    alt="SWGfy clone"
+                    alt="Pitchnest"
                 ></img>
                 <div className="form-head">
                     <h1>Sign up to</h1>
