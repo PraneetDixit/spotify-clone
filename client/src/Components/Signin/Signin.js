@@ -36,6 +36,7 @@ export default function Signin() {
     return (
         <>
             <div id="signinWrapper">
+                <div id="signinInnerWrapper">
                 <div className="logo">
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png"
@@ -59,9 +60,10 @@ export default function Signin() {
                     <button type="submit" onClick={handleLogin}>Login</button>
                 </form>
                 <p>
-                    Don't have an account?{" "}
+                    Don't have an account?&nbsp;
                     <Link to="/signup">Sign up for SWGfy</Link>
                 </p>
+                </div>
             </div>
         </>
     );

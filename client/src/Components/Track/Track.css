@@ -80,14 +80,13 @@
   width: 60px;
   justify-content: center;
   align-items: center;
-  outline: navajowhite;
   border: none;
-  background-color: #1ed760;
+  background-color: #ff4d4d;
   margin-right: 20px;
 }
 
 #play:hover{
-  background-color: #3be477;
+  background-color: #ff5d5d;
 }
 
 #actions{
@@ -98,8 +97,8 @@
 #like{
   font-size: 23px;
   background: no-repeat;
-  border: 3px solid #b3b3b3;
-  color: #b3b3b3;
+  border: 3px solid #555;
+  color: #555;
   width: 42px;
   border-radius: 50%;
   display: flex;
@@ -109,8 +108,8 @@
 }
 
 #like:hover{
-  color: white;
-  border: 3px solid #ffffff;
+  color: #888;
+  border: 3px solid #888;
 }
 
 #contributors{
@@ -128,7 +127,7 @@
 }
 
 .artistTab:hover{
-  background-color: #1f1f1f;
+  background-color: #fcfcfc;
 }
 
 .artistTab img{
@@ -140,11 +139,17 @@
 }
 
 .artistTab p{
-  color: white;
+  color: #333;
   font-weight: 600;
   font-size: 15px;
 }
 
 .artistTab a:hover{
   text-decoration: underline;
+}
+
+#playerRoot{
+    padding: 4px 4px 2px 4px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);
 }

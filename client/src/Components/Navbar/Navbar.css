@@ -20,12 +20,13 @@ nav > a {
 .midBar > a {
     font-size: 22px;
     padding: 13px;
-    background: #1f1f1f;
+    background: #f7f7f7;
     border-radius: 50%;
     display: flex;
     aspect-ratio: 1;
     position: relative;
     transition: transform 0.1s;
+    box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);
 }
 
 .midBar > a:hover {
@@ -56,16 +57,16 @@ nav > a {
 
 .signUp {
     background-color: transparent;
-    color: #b3b3b3;
+    color: #333;
 }
 
 .signUp:hover {
-    color: white;
+    color: #555;
 }
 
 .signIn {
-    background-color: white;
-    color: black;
+    background-color: #ff4d4d;
+    color: #f7f7f7;
 }
 
 .signIn:hover {
@@ -81,22 +82,23 @@ nav > a {
 
 #searchTerm {
     width: 100%;
-    border: 2px solid #1f1f1f;
+    border: 2px solid #f7f7f7;
     display: block;
-    background-color: #1f1f1f;
+    background-color: #f7f7f7;
     padding: 15px 50px;
     border-radius: 26px;
     font-size: 16px;
-    color: white;
-    caret-color: white;
+    color: #555;
+    caret-color: #555;
     outline: none;
     transition: border-color 0.1s, background-color 0.2s;
     cursor: pointer;
+    box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);
 }
 
 #searchTerm:hover,
 #searchTerm:focus {
-    background-color: #2a2a2a;
+    background-color: #f9f9f9;
 }
 
 #searchTerm:focus {
@@ -176,14 +178,14 @@ nav > a {
 
 .tab {
     padding: 11px;
-    color: white;
+    color: #555;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .tab:hover{
-    background-color: rgb(255 255 255 / 10%);
+    background-color: #f7f7f7;
 }
 
 .userActions{
@@ -193,8 +195,8 @@ nav > a {
     flex-shrink: 0;
     width: 160px;
     right: -10px;
-    background-color: #1f1f1f;
+    background-color: #fcfcfc;
     border-radius: 5px;
     padding: 5px;
-    box-shadow: 0px 0px 4px 3px #1f1f1f44;
+    box-shadow: 0px 0px 4px 1px rgb(0 0 0 / 10%);
 }

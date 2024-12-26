@@ -105,6 +105,14 @@ export default function Player({currentTrack}) {
             volume: "row1-4",
             playButton: "row1-3",
           }}
+          rootContainerProps={{
+            colorScheme: "light",
+            width: "calc(100% - 20px)",
+            position: "fixed",
+            marginX: "10px",
+            id: "playerRoot",
+          }}
+          coverImgsCss={{artwork:{borderRadius: "5px"}}}
         />
       </div>
     ):(

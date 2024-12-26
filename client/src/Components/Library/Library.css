@@ -1,5 +1,5 @@
 #libraryInnerWrapper{
-    background-color: #121212;
+    background-color: #f7f7f7;
     height: 100%;
     padding: 20px 25px;
 }
@@ -20,15 +20,15 @@
     font-size: 16px;
     font-weight: 600;
     margin-left: 10px;
-    color: #b3b3b3;
+    color: #333;
 }
 
 .libCard{
     display: flex;
     padding: 9px;
-    background: #1f1f1f;
+    background: #fcfcfc;
     border-radius: 5px;
-    color: white;
+    color: #555;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -51,7 +51,7 @@
 .cardArtists{
     font-size: 12px;
     font-weight: 500;
-    color: rgb(255 255 255 / 70%);
+    color: #888;
 }
 
 #shareWrapper{
@@ -63,8 +63,8 @@
     border-radius: 5px;
     outline: none;
     border: none;
-    background-color: #1f1f1f;
-    color: white;
+    background-color: #fcfcfc;
+    color: #555;
     font-weight: 600;
 }
 
@@ -76,5 +76,5 @@
 }
 
 #shareWrapper span{
-    color: white;
+    color: #555;
 }

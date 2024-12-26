@@ -1,6 +1,6 @@
 #container{
     height: 100vh;
-    background-color: black;
+    background-color: white;
     display: flex;
     flex-direction: column;
 }
@@ -18,16 +18,20 @@
 }
 
 #routeWrapper{
-    background-color: #121212;
+    background-color: #f7f7f7;
     border-radius: 10px;
     flex-grow: 1;
-    margin-left: 8px;
+    margin-left: 12px;
     max-width: calc(100% - 358px);
     overflow-y: scroll;
+    margin-top: 5px;
+    box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);
 }
 
 #libraryWrapper{
     width: 350px;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 5px;
+    box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);
 }

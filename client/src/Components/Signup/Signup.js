@@ -42,6 +42,7 @@ export default function Signup() {
     return (
         <>
             <div id="signupWrapper">
+                <div id="signupInnerWrapper">
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png"
                     height={50}
@@ -82,6 +83,7 @@ export default function Signup() {
                     Already have an account?
                     <Link to="/signin"> Log in here</Link>
                 </p>
+                </div>
             </div>
         </>
     );

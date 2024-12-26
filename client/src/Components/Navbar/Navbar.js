@@ -34,14 +34,14 @@ export default function Navbar({ user, logout }) {
             <Link to="/">
                 <FontAwesomeIcon
                     icon="fa-solid fa-music"
-                    style={{ color: "#ffffff" }}
+                    style={{ color: "#ff4d4d" }}
                 />
             </Link>
             <div className="midBar">
                 <Link to="/">
                     <FontAwesomeIcon
                         icon="fa-solid fa-house"
-                        style={{ color: "#b3b3b3" }}
+                        style={{ color: "#333" }}
                     />
                 </Link>
                 <div className="searchBox">
@@ -49,7 +49,7 @@ export default function Navbar({ user, logout }) {
                         <button id="clear" onClick={clearTerm}>
                             <FontAwesomeIcon
                                 icon="fa-solid fa-xmark"
-                                style={{ color: "inherit" }}
+                                style={{ color: "#333" }}
                             />
                         </button>
                     )}
@@ -66,7 +66,7 @@ export default function Navbar({ user, logout }) {
                     <button id="search" onClick={handleSearch}>
                         <FontAwesomeIcon
                             icon="fa-solid fa-magnifying-glass"
-                            style={{ color: "inherit" }}
+                            style={{ color: "#333" }}
                         />
                     </button>
                 </div>

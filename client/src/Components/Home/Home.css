@@ -11,7 +11,7 @@
 }
 
 .card:hover {
-  background-color: #1f1f1f;
+  background-color: #fd4949;
 }
 
 .card img {
@@ -26,14 +26,14 @@
 }
 
 h2 {
-  color: white;
+  color: #333;
   font-weight: 700;
   margin: 10px 0;
   font-size: 22px;
 }
 
 .card p {
-  color: white;
+  color: #333;
   margin-top: 10px;
   white-space: nowrap;
   overflow: hidden;
@@ -41,7 +41,19 @@ h2 {
 }
 
 .card .sub {
-  color: #b3b3b3;
+  color: #555;
   font-size: 14px;
   margin: 0;
+}
+
+.card:hover p{
+  color: #f7f7f7;
+}
+
+.card:hover .sub{
+  color: #e5e5e5;
+}
+
+.splide__arrow{
+  background-color: #fd4949;
 }

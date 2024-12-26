@@ -76,7 +76,7 @@ export default function Library({ user }) {
             <div id="libTitle">
                 <FontAwesomeIcon
                     icon="fa-solid fa-book"
-                    style={{ color: "#b3b3b3" }}
+                    style={{ color: "#333" }}
                 />
                 <div>Your Library</div>
             </div>

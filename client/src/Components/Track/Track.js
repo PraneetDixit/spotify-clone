@@ -103,7 +103,7 @@ export default function Track() {
                                 setCurrentTrack(id);
                             }}
                         >
-                            <FontAwesomeIcon icon="fa-solid fa-play" />
+                            <FontAwesomeIcon icon="fa-solid fa-play" style={{color: "#333"}}/>
                         </button>
                         <button
                             id="like"
@@ -114,7 +114,7 @@ export default function Track() {
                             {saved[track.id] ? (
                                 <FontAwesomeIcon
                                     icon="fa-solid fa-circle-check"
-                                    style={{ color: "#3be477" }}
+                                    style={{ color: "#ff4d4d" }}
                                 />
                             ) : (
                                 <FontAwesomeIcon

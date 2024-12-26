@@ -37,7 +37,7 @@
 }
 
 #artist .track:hover{
-    background-color: #5c5c5c;
+    background-color: #fcfcfc;
 }
 
 .track img{
@@ -45,7 +45,7 @@
 }
 
 #artist .trackName{
-    color: white;
+    color: #333;
     font-size: 14px;
     font-weight: 500;
     flex-grow: 1;
@@ -57,7 +57,7 @@
 }
 
 #artist .plays, .duration, .serial{
-    color: #b3b3b3;
+    color: #555;
     font-size: 14px;
 }
 
