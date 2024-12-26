@@ -38,9 +38,9 @@ app.use(
         saveUninitialized: true,
         cookie: {
             httpOnly: true,
-            // secure: node_env == "PROD" ? true : false,
+            secure: node_env == "PROD" ? true : false,
             sameSite: node_env == "PROD" ? 'none' : 'lax',
-            partitioned: node_env == "PROD" ? true : false,
+            // partitioned: node_env == "PROD" ? true : false,
             // secure: true,
             // sameSite: 'none',
             // partitioned: true,
