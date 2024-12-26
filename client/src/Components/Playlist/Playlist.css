@@ -39,11 +39,11 @@
 }
 
 #playlist .track:hover{
-    background-color: #5c5c5c;
+    background-color: #fcfcfc;
 }
 
 #playlist .trackName{
-    color: white;
+    color: #333;
     font-size: 15px;
     font-weight: 500;
 }
