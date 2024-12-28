@@ -151,6 +151,24 @@ nav > a {
     color: white;
 }
 
+#speechButton{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    vertical-align: middle;
+    padding-right: 10px;
+    color: #b3b3b3;
+    transition: color 0.1s;
+}
+
+#speechButton:hover {
+    color: white;
+}
+
 .userWidget {
     display: flex;
     align-items: center;

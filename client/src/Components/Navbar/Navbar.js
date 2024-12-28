@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
+import SpeechRecognition, {
+    useSpeechRecognition,
+} from "react-speech-recognition";
 
 export default function Navbar({ user, logout }) {
     let navigate = useNavigate();
     const [term, setTerm] = useState("");
     const [showOptions, setShowOptions] = useState(false);
+
+    const { finalTranscript, browserSupportsSpeechRecognition } =
+        useSpeechRecognition();
+
+    const startListening = () => {
+        SpeechRecognition.startListening({ continuous: false });
+    }
 
     const handleChange = (e) => {
         setTerm(e.target.value);
@@ -16,10 +26,11 @@ export default function Navbar({ user, logout }) {
         setTerm("");
     };
 
-    const handleSearch = () => {
-        if (term.trim()) {
+    const handleSearch = (altTerm) => {
+        if(altTerm){
+            navigate(`/search/${altTerm}`);
+        }else if (term.trim()) {
             navigate(`/search/${term}`);
-            clearTerm();
         }
     };
 
@@ -28,6 +39,14 @@ export default function Navbar({ user, logout }) {
             handleSearch();
         }
     };
+
+    useEffect(()=>{
+        if(finalTranscript && finalTranscript.trim()){
+            setTerm(finalTranscript.trim());
+            handleSearch(finalTranscript.trim());
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[finalTranscript])
 
     return (
         <nav>
@@ -46,9 +65,25 @@ export default function Navbar({ user, logout }) {
                 </Link>
                 <div className="searchBox">
                     {term && (
-                        <button id="clear" onClick={clearTerm}>
+                        <button
+                            id="clear"
+                            onClick={clearTerm}
+                            style={{
+                                right: browserSupportsSpeechRecognition
+                                    ? "30px"
+                                    : "0px",
+                            }}
+                        >
                             <FontAwesomeIcon
                                 icon="fa-solid fa-xmark"
+                                style={{ color: "#333" }}
+                            />
+                        </button>
+                    )}
+                    {browserSupportsSpeechRecognition && (
+                        <button id="speechButton" onClick={startListening}>
+                            <FontAwesomeIcon
+                                icon="fa-solid fa-microphone"
                                 style={{ color: "#333" }}
                             />
                         </button>
@@ -74,10 +109,20 @@ export default function Navbar({ user, logout }) {
             <div className="auth">
                 {user ? (
                     <div className="userWidget">
-                        <div className="avatar" onClick={() => setShowOptions(!showOptions)}>
+                        <div
+                            className="avatar"
+                            onClick={() => setShowOptions(!showOptions)}
+                        >
                             {user.username.slice(0, 1).toUpperCase()}
                         </div>
-                        <div className="userActions" style={showOptions ? { display: "block" } : { display: "none" }}>
+                        <div
+                            className="userActions"
+                            style={
+                                showOptions
+                                    ? { display: "block" }
+                                    : { display: "none" }
+                            }
+                        >
                             <div className="tab">{user.username}</div>
                             <div className="tab" onClick={logout}>
                                 Log Out
